@@ -3,6 +3,10 @@ clear
 close all
 
 function [Ergebnis, AnzahlIterationen] = WurzelHeron(Radikand, Genauigkeit)
+    if Radikand < 0
+        error("Wurzeln negativer Radikanden sind nicht unterstuetzt")
+    end
+    
     A = Radikand; % Flaecheninhalt des zugehoerigen Rechtecks
     x0 = 1;
     y0 = A/x0;
